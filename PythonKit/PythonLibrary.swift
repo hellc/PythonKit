@@ -99,10 +99,6 @@ public extension PythonLibrary {
 // Methods of `PythonLibrary` required to set a given Python location.
 public extension PythonLibrary {
   static func useLibrary(_ path: String) {
-    precondition(librarySymbolsLoaded, """
-      Error: \(#function) should not be called before any Python library \
-      has already been loaded.
-      """)
     PythonLibrary.Environment.library.set(path)
   }
 }
